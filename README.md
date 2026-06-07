@@ -18,7 +18,7 @@ retrieval configurations.
 | **M2** — Query pipeline | Query understanding → filter inference, hybrid dense+sparse retrieval (RRF, filtered inside Qdrant), Perplexity-style deduplicated citations, tuned low-confidence refusal | done |
 | **M3** — Agent layer | LangGraph state machine with six routes (concept_explanation, paper_deep_dive, compare_approaches, recent_developments, find_papers, out_of_scope), deterministic router, three typed tools, Mermaid graph visualisation | done |
 | **M4** — Evaluation | 48-question golden set across all six routes + held-out OOC, P/R@5 + citation faithfulness (heuristic + optional LLM judge) + refusal correctness + latency + approximate tokens, three-config comparison, JSON + Markdown report | done |
-| **M5** — Engineering standards | Continuous: strict mypy, ruff, ≥70% coverage on `src/`, no hardcoded paths/models/thresholds, no silent failure, structured logs only | applied throughout |
+| **M5** — Engineering standards hardening pass | Final sweep across the codebase against the M5 checklist | not started |
 | Bonus tracks (B1–B4) | Query UI / Ingestion UI / Reranker / Vernacular | not started |
 
 Design decisions are recorded under [`adr/`](adr/README.md).
@@ -603,20 +603,29 @@ make logs                  # tail Qdrant logs
 make eval                  # writes eval/report.{json,md}
 ```
 
-**Engineering standards (M5, enforced throughout):**
+**Engineering standards in place (built into each milestone):**
 
 - Clear `src/` layout; modular `ingest` / `retrieve` / `generate` / `agents` /
-  `eval` packages; no business logic in CLI entrypoints.
-- Strict `mypy`; no `Any` in public interfaces without justification.
-- `pydantic-settings` for all config; no hardcoded paths, models, or thresholds.
-- `structlog` everywhere; no `print` outside CLI user-facing output.
+  `eval` packages; CLI entrypoints are thin (parse args + call into the
+  package).
+- Strict `mypy` configured; `ruff` lint + format on every commit via
+  `pre-commit`.
+- `pydantic-settings` for all config; nothing in `src/` hardcodes a path,
+  model, or threshold.
+- `structlog` for structured logging; logs go to stderr so CLI stdout (JSON
+  reports) stays pipeable.
 - Unit tests for parsing, chunking, filter inference, citation rendering,
   refusal, router, tools, eval metrics. Integration tests for the ingest
-  CLI, the LangGraph graph, and the eval runner. ≥70% coverage on `src/`.
-- Reproducibility: fixed seeds, locked deps committed, `docker compose up`
-  brings the stack up.
-- No silent failure: every degraded component logs clearly and either
-  recovers or fails loudly. `except: pass` is treated as a bug.
+  CLI, the LangGraph graph, and the eval runner.
+- Reproducibility: fixed seeds, locked deps committed (`uv.lock`),
+  `docker compose up` brings the stack up.
+- Errors are logged and either recovered or surfaced — `except: pass` is
+  treated as a bug.
+
+M5 itself is a planned final hardening pass that audits the codebase
+against the brief's M5 checklist end-to-end (coverage gate verified at
+≥70%, no `Any` in public interfaces without justification, every ADR
+cross-referenced, etc.). It has not been done yet.
 
 ---
 
@@ -636,35 +645,6 @@ Consequences · Alternatives. Immutable once `Accepted`.
 | [0007](adr/0007-refusal-threshold-and-confidence-signal.md) | Refusal on a dense-cosine confidence signal, not the fused RRF score | Accepted |
 | [0008](adr/0008-agentic-routing-with-langgraph.md) | Agentic routing with LangGraph: deterministic router, typed tools, metadata-only FindPapers | Accepted |
 | [0009](adr/0009-evaluation-harness.md) | Multi-configuration eval harness with end-to-end metrics and a dual-mode faithfulness judge | Accepted |
-
----
-
-## Demo walkthrough (10–15 minutes)
-
-A suggested path for a reviewer or a recorded demo:
-
-1. **Setup (≤ 1 min).** `make setup && make up`, then show `make lint` passes.
-2. **Corpus + ingestion (≤ 2 min).** Show `manifest.json`, run
-   `uv run python -m research_navigator.ingest validate` (no writes), then
-   `... ingest stats` to show per-content-type / per-year / per-tag counts.
-   Re-run `ingest` to demonstrate idempotency (`total_writes: 0`).
-3. **M2 — query pipeline (≤ 3 min).** Run two questions:
-   - `What is retrieval-augmented generation?` → grounded answer + sources.
-   - `What's the capital of Mars?` → refusal (the dense-cosine gate fires).
-   Show the JSON output (`--json`) to make the citation contract visible.
-4. **M3 — agent layer (≤ 4 min).** One query per route:
-   - `Tell me about Llama 3` → `paper_deep_dive`.
-   - `Compare DPO and KTO` → `compare_approaches`.
-   - `Recent work on agents` → `recent_developments`.
-   - `Recommend seminal papers on alignment` → `find_papers` (metadata-only).
-   - `What's the weather today?` → `out_of_scope`.
-   Open `docs/agent-graph.md` for the Mermaid diagram.
-5. **M4 — eval harness (≤ 3 min).** `make eval`, then `cat eval/report.md`.
-   Walk through the headline table, the per-route breakdown, the A-vs-B and
-   A-vs-C deltas, and the "Honest limitations" section.
-6. **Wrap-up.** Skim `adr/README.md` — every significant choice has an ADR;
-   none are hand-wavy.
-
 ---
 
 ## Honest limitations and known gaps
@@ -699,8 +679,10 @@ A clear-eyed account, kept here so it stays visible:
   one-time `complete_corpus.py` script. The codebase treats the corpus as a
   variable (paths in config, manifest validated on load), so the same code
   works against a different sealed corpus when the client swaps it in.
-- **Bonus tracks B1–B4 are not started.** M0–M4 are complete; the bonus
-  query/ingestion UIs, reranker, and vernacular handling remain open.
+- **M5 hardening pass and bonus tracks B1–B4 are not done.** M0–M4 are
+  complete; the final M5 sweep (audit against the engineering-standards
+  checklist end-to-end) and the bonus query/ingestion UIs, reranker, and
+  vernacular handling remain open.
 
 If something doesn't work for you, run with `RN_LOG_LEVEL=DEBUG
 RN_JSON_LOGS=false` and check the structured logs on stderr. Every degraded
