@@ -1,0 +1,86 @@
+[project]
+name = "research-navigator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Manojcs47", email = "cs23btech11047@iith.ac.in" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "langgraph>=1.2.4",
+    "pydantic-settings>=2.14.1",
+    "qdrant-client>=1.18.0",
+    "structlog>=26.1.0",
+    "pymupdf>=1.24.0",
+    "sentence-transformers>=3.0.0",
+    "httpx>=0.28.0",
+]
+
+
+[project.scripts]
+rn-ingest = "research_navigator.cli.ingest:main"
+rn-query = "research_navigator.cli.query:main"
+
+
+[build-system]
+requires = ["uv_build>=0.11.19,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.uv.workspace]
+members = [
+    "research-navigator",
+]
+
+[dependency-groups]
+dev = [
+    "detect-secrets>=1.5.0",
+    "mypy>=2.1.0",
+    "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.16",
+]
+# ---------------------------------------------------------------------------
+# Tooling configuration
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+exclude = ["ai-research-navigator-corpus"]
+
+[tool.ruff.lint]
+# E/F = pycodestyle+pyflakes, I = isort, UP = pyupgrade, B = bugbear,
+# C4 = comprehensions, SIM = simplify, RUF = ruff-specific.
+select = ["E", "F", "I", "UP", "B", "C4", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.13"
+files = ["src"]
+strict = true
+warn_unused_configs = true
+plugins = ["pydantic.mypy"]
+
+# These libraries ship no type information; we isolate the Any-boundary to their
+# import sites (the lazy imports in parse.py / embed.py) rather than the codebase.
+[[tool.mypy.overrides]]
+module = ["fitz", "sentence_transformers"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "integration: tests that require external services (Qdrant, network, an LLM)",
+]
+
+[tool.coverage.run]
+source = ["src/research_navigator"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+# Brief requires >= 70% coverage on src/. M1 lands at ~90%.
+fail_under = 70
