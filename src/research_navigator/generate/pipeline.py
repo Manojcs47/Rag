@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import re
 from enum import StrEnum
+from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -104,6 +105,28 @@ class QueryEngine:
         self._generator = generator or build_generator(settings)
         self._known_tags = known_tags if known_tags is not None else self._load_tags()
 
+    # ---- public properties used by M3 nodes -------------------------------
+
+    @property
+    def settings(self) -> Settings:
+        return self._s
+
+    @property
+    def retriever(self) -> HybridRetriever:
+        return self._retriever
+
+    @property
+    def generator(self) -> Generator:
+        return self._generator
+
+    def analyze(self, query: str) -> QueryAnalysis:
+        """Public access to the configured filter-inference step."""
+        return analyze_query(
+            query,
+            known_tags=self._known_tags,
+            recent_year_floor=self._s.retrieval.recent_year_floor,
+        )
+
     def _load_tags(self) -> frozenset[str] | None:
         """Derive the tag vocabulary from the manifest (corpus as a variable)."""
         try:
@@ -114,29 +137,71 @@ class QueryEngine:
         tags = {t for doc in manifest.documents for t in doc.tags}
         return frozenset(tags) if tags else None
 
+    # ---- M2: the original top-level answer() flow -------------------------
+
     def answer(self, query: str) -> Answer:
         """Run the full M2 pipeline for one question."""
-        analysis = analyze_query(
-            query,
-            known_tags=self._known_tags,
-            recent_year_floor=self._s.retrieval.recent_year_floor,
-        )
+        analysis = self.analyze(query)
+        result = self._retrieve_with_relaxation(query, analysis)
+        return self._finalize(query, analysis, result)
 
+    # ---- M3 hooks ---------------------------------------------------------
+
+    def answer_with_filter(self, query: str, query_filter: Any) -> Answer:
+        """Answer using a caller-supplied Qdrant filter (skips analysis-derived filter).
+
+        Used by PaperDeepDive (force a single doc_id) and any other node that
+        needs to express a constraint outside the inferable-filter grammar.
+        """
+        analysis = self.analyze(query)
+        result = self._retriever.retrieve(query, query_filter=query_filter)
+        return self._finalize(query, analysis, result)
+
+    def answer_with_analysis(self, query: str, analysis: QueryAnalysis) -> Answer:
+        """Answer using a caller-supplied :class:`QueryAnalysis` (e.g. forced year_min).
+
+        Used by RecentDevelopments to compose its date-math-driven recency floor
+        with whatever else the query inferred (tags, content_type).
+        """
+        result = self._retrieve_with_relaxation(query, analysis)
+        return self._finalize(query, analysis, result)
+
+    def retrieve_with_filter(self, query: str, query_filter: Any):  # type: ignore[no-untyped-def]
+        """Retrieval-only with a caller-supplied filter. Used by CompareApproaches."""
+        return self._retriever.retrieve(query, query_filter=query_filter)
+
+    def answer_from_chunks(
+        self,
+        query: str,
+        chunks: list[RetrievedChunk],
+        confidence: float,
+    ) -> Answer:
+        """Answer from a pre-combined chunk list (e.g. union of multiple retrievals)."""
+        from research_navigator.retrieve.hybrid import RetrievalResult
+
+        analysis = self.analyze(query)
+        result = RetrievalResult(chunks=chunks, dense_confidence=confidence)
+        return self._finalize(query, analysis, result)
+
+    # ---- internal: shared retrieval + finalisation ------------------------
+
+    def _retrieve_with_relaxation(self, query: str, analysis: QueryAnalysis):  # type: ignore[no-untyped-def]
+        """Retrieve under ``analysis``'s filter; relax tags once if it empties."""
         result = self._retriever.retrieve(query, query_filter=build_filter(analysis))
-        # Relaxation fallback: a mis-inferred tag can empty the result — retry once
-        # without the tag constraint rather than refuse on a filtering artefact.
         if result.is_empty and analysis.tags:
-            log.info("retrieve_relax_tags", tags=analysis.tags)
+            log.info("retrieval_filter_relaxed", reason="empty_with_tags")
             result = self._retriever.retrieve(
                 query, query_filter=build_filter(analysis, include_tags=False)
             )
+        return result
 
+    def _finalize(self, query: str, analysis: QueryAnalysis, result) -> Answer:  # type: ignore[no-untyped-def]
+        """Refusal gate → citations → generate → validate. The M2 contract."""
         if result.is_empty or result.dense_confidence < self._s.retrieval.refusal_min_score:
             log.info(
                 "answer_refused",
+                reason="empty" if result.is_empty else "low_confidence",
                 confidence=round(result.dense_confidence, 4),
-                threshold=self._s.retrieval.refusal_min_score,
-                retrieved=len(result.chunks),
             )
             return Answer(
                 status=AnswerStatus.REFUSED,
@@ -147,13 +212,13 @@ class QueryEngine:
                 analysis=analysis,
             )
 
-        citations, _ = build_citations(result.chunks)
-        citations = citations[: self._s.retrieval.top_k]
+        citations, _ = build_citations(result.chunks[: self._s.retrieval.top_k])
         sources = self._sources_for(citations, result.chunks)
 
         try:
             generated = self._generator.generate(query, sources)
         except GenerationError as exc:
+            log.error("generation_failed", error=str(exc))
             return Answer(
                 status=AnswerStatus.ERROR,
                 query=query,
@@ -166,21 +231,8 @@ class QueryEngine:
 
         valid = {c.number for c in citations}
         cleaned = _strip_invalid_markers(generated.text, valid)
-
-        if cleaned.strip() == REFUSAL_TEXT:
-            return Answer(
-                status=AnswerStatus.REFUSED,
-                query=query,
-                text=REFUSAL_TEXT,
-                confidence=result.dense_confidence,
-                num_retrieved=len(result.chunks),
-                analysis=analysis,
-            )
-
-        referenced = sorted({int(m.group(1)) for m in _MARKER.finditer(cleaned)})
+        referenced = {int(m.group(1)) for m in _MARKER.finditer(cleaned)}
         if not referenced:
-            # An answer with no valid attribution is treated as a refusal: the brief
-            # forbids unattributed claims, so we do not let one stand.
             log.warning("answer_unattributed_refused", confidence=result.dense_confidence)
             return Answer(
                 status=AnswerStatus.REFUSED,

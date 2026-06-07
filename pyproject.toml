@@ -21,6 +21,7 @@ dependencies = [
 [project.scripts]
 rn-ingest = "research_navigator.cli.ingest:main"
 rn-query = "research_navigator.cli.query:main"
+rn-agent = "research_navigator.cli.agent:main"
 
 
 [build-system]

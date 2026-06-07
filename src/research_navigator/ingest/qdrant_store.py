@@ -66,8 +66,12 @@ class QdrantStore:
                 self._s.sparse_vector_name: models.SparseVectorParams(modifier=models.Modifier.IDF)
             },
         )
-        for field, schema in _INDEXED_FIELDS.items():
-            self._c.create_payload_index(name, field_name=field, field_schema=schema)
+        import warnings
+
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", message=".*Payload indexes have no effect.*")
+            for field, schema in _INDEXED_FIELDS.items():
+                self._c.create_payload_index(name, field_name=field, field_schema=schema)
         log.info("collection_created", collection=name, indexed_fields=list(_INDEXED_FIELDS))
 
     def drop_collection(self) -> None:
