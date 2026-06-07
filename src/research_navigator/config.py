@@ -65,7 +65,7 @@ class RetrievalConfig(BaseModel):
         description="Candidates each retrieval branch (dense, sparse) returns before RRF fusion.",
     )
     refusal_min_score: float = Field(
-        default=0.55,
+        default=0.6,
         description=(
             "Minimum top dense cosine similarity required to attempt an answer. "
             "Below this the pipeline refuses. Tuned in adr-0007; the fused RRF score "
