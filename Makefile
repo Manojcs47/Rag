@@ -1,4 +1,4 @@
-.PHONY: help setup lint fmt typecheck test test-integration up down logs clean
+.PHONY: help setup lint fmt typecheck test test-integration eval up down logs clean
 
 help:
 	@echo "setup            Install deps (uv sync) + git hooks (pre-commit)"
@@ -7,6 +7,7 @@ help:
 	@echo "typecheck        mypy (strict, src/)"
 	@echo "test             Run unit tests"
 	@echo "test-integration Run tests marked 'integration'"
+	@echo "eval             Run the M4 evaluation harness (writes eval/report.{json,md})"
 	@echo "up / down        Start / stop the Qdrant container"
 	@echo "logs             Tail Qdrant logs"
 
@@ -43,3 +44,6 @@ logs:
 
 clean:
 	rm -rf .pytest_cache .ruff_cache .mypy_cache htmlcov .coverage
+
+eval:
+	uv run python -m research_navigator.cli.eval

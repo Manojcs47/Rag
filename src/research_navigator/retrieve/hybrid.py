@@ -15,7 +15,7 @@ generation and citation rendering need; no raw Qdrant payloads escape this modul
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Protocol, runtime_checkable
 
 from pydantic import BaseModel, Field
 from qdrant_client import models
@@ -46,6 +46,25 @@ _PAYLOAD_FIELDS = [
     "kind",
     "text",
 ]
+
+
+@runtime_checkable
+class Retriever(Protocol):
+    """Common interface implemented by every retriever (M2 hybrid, M4 ablations).
+
+    Both :class:`HybridRetriever` and the ``DenseOnlyRetriever`` defined in the
+    eval package satisfy this Protocol, so :class:`QueryEngine` can be parameterised
+    with either at construction time.
+    """
+
+    def retrieve(
+        self,
+        query: str,
+        *,
+        query_filter: Any = None,
+        candidate_k: int | None = None,
+        prefetch_limit: int | None = None,
+    ) -> RetrievalResult: ...
 
 
 class RetrievedChunk(BaseModel):

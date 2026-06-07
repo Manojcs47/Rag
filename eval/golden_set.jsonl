@@ -1,0 +1,48 @@
+{"id": "ce-01", "query": "What is retrieval-augmented generation?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2005.11401"], "notes": "Foundational RAG paper"}
+{"id": "ce-02", "query": "How does chain-of-thought prompting work?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2201.11903"], "notes": "Foundational CoT"}
+{"id": "ce-03", "query": "What is RLHF and why is it used for language models?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2203.02155"], "notes": "InstructGPT"}
+{"id": "ce-04", "query": "Explain LoRA for parameter-efficient fine-tuning.", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2106.09685"]}
+{"id": "ce-05", "query": "How do autonomous LLM-powered agents work?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2210.03629", "lillog-llm-agents-2023-06"]}
+{"id": "ce-06", "query": "How does the transformer architecture use attention?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-1706.03762", "hf-nlp-ch01"]}
+{"id": "ce-07", "query": "What are hallucinations in large language models?", "route": "concept_explanation", "expected_doc_ids": ["lillog-extrinsic-hallucinations-2024-07"]}
+{"id": "ce-08", "query": "What is constitutional AI?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2212.08073"]}
+{"id": "pd-01", "query": "Tell me about the Attention Is All You Need paper.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-1706.03762"]}
+{"id": "pd-02", "query": "Summarise the Llama 3 herd of models paper.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2407.21783"]}
+{"id": "pd-03", "query": "What does the GraphRAG paper propose?", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2404.16130"]}
+{"id": "pd-04", "query": "Describe the DeepSeek-R1 paper.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2501.12948"]}
+{"id": "pd-05", "query": "Tell me about Mixtral.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2401.04088"]}
+{"id": "pd-06", "query": "Explain the BitNet b1.58 paper.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2402.17764"]}
+{"id": "pd-07", "query": "Summarise the Phi-3 technical report.", "route": "paper_deep_dive", "expected_doc_ids": ["arxiv-2404.14219"]}
+{"id": "ca-01", "query": "Compare KTO and SimPO for alignment.", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2402.01306", "arxiv-2405.14734"]}
+{"id": "ca-02", "query": "Compare CRAG and RAFT.", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2401.15884", "arxiv-2403.10131"]}
+{"id": "ca-03", "query": "What's the difference between CRAG and GraphRAG?", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2401.15884", "arxiv-2404.16130"]}
+{"id": "ca-04", "query": "Compare Llama 3 vs DeepSeek-V3.", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2407.21783", "arxiv-2412.19437"]}
+{"id": "ca-05", "query": "Compare Chain-of-Thought and DeepSeek-R1 for reasoning.", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2201.11903", "arxiv-2501.12948"]}
+{"id": "ca-06", "query": "Compare Qwen2 and Phi-3 as open-weight models.", "route": "compare_approaches", "expected_doc_ids": ["arxiv-2407.10671", "arxiv-2404.14219"]}
+{"id": "rd-01", "query": "Recent developments in open-weight models.", "route": "recent_developments", "expected_doc_ids": ["arxiv-2407.21783", "arxiv-2412.19437", "arxiv-2407.10671", "arxiv-2404.14219", "arxiv-2408.00118"]}
+{"id": "rd-02", "query": "What's new in alignment research?", "route": "recent_developments", "expected_doc_ids": ["arxiv-2401.10020", "arxiv-2402.01306", "arxiv-2405.14734"]}
+{"id": "rd-03", "query": "Recent advances in RAG.", "route": "recent_developments", "expected_doc_ids": ["arxiv-2401.15884", "arxiv-2403.10131", "arxiv-2404.16130"]}
+{"id": "rd-04", "query": "Latest work on efficient inference.", "route": "recent_developments", "expected_doc_ids": ["arxiv-2402.17764", "arxiv-2407.08608"]}
+{"id": "rd-05", "query": "Recent reasoning advances in LLMs.", "route": "recent_developments", "expected_doc_ids": ["arxiv-2501.12948"]}
+{"id": "rd-06", "query": "What's new in evaluation benchmarks?", "route": "recent_developments", "expected_doc_ids": ["arxiv-2403.04132", "arxiv-2406.01574"]}
+{"id": "rd-07", "query": "Latest research on multimodal models.", "route": "recent_developments", "expected_doc_ids": ["arxiv-2403.05530"]}
+{"id": "fp-01", "query": "Recommend papers on RAG.", "route": "find_papers", "expected_doc_ids": ["arxiv-2005.11401", "arxiv-2401.15884", "arxiv-2403.10131", "arxiv-2404.16130"]}
+{"id": "fp-02", "query": "Give me a reading list on agents.", "route": "find_papers", "expected_doc_ids": ["arxiv-2210.03629", "arxiv-2405.15793", "lillog-llm-agents-2023-06", "hf-agents-u01"]}
+{"id": "fp-03", "query": "Recommend seminal papers on alignment.", "route": "find_papers", "expected_doc_ids": ["arxiv-2203.02155", "arxiv-2212.08073"]}
+{"id": "fp-04", "query": "Suggest papers on efficient LLMs.", "route": "find_papers", "expected_doc_ids": ["arxiv-2106.09685", "arxiv-2402.17764", "arxiv-2407.08608"]}
+{"id": "fp-05", "query": "Where do I start with reasoning in LLMs?", "route": "find_papers", "expected_doc_ids": ["arxiv-2201.11903", "arxiv-2210.03629", "arxiv-2501.12948"]}
+{"id": "fp-06", "query": "Recommend recent papers on preference optimization.", "route": "find_papers", "expected_doc_ids": ["arxiv-2401.10020", "arxiv-2402.01306", "arxiv-2405.14734"]}
+{"id": "fp-07", "query": "Reading list on safety and interpretability.", "route": "find_papers", "expected_doc_ids": ["anthropic-mapping-mind-2024-05", "openai-weak-to-strong-2023-12", "lillog-adversarial-2023-10", "lillog-reward-hacking-2024-11"]}
+{"id": "fp-08", "query": "Best papers on tokenization and fine-tuning.", "route": "find_papers", "expected_doc_ids": ["hf-nlp-ch03", "hf-nlp-ch06"]}
+{"id": "ce-09", "query": "What is preference optimization?", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2402.01306", "arxiv-2405.14734"]}
+{"id": "ce-10", "query": "Explain Mixture of Experts in LLMs.", "route": "concept_explanation", "expected_doc_ids": ["arxiv-2401.04088", "arxiv-2412.19437"]}
+{"id": "ce-11", "query": "What is reward hacking in reinforcement learning?", "route": "concept_explanation", "expected_doc_ids": ["lillog-reward-hacking-2024-11"]}
+{"id": "ce-12", "query": "How does prompt engineering work for LLMs?", "route": "concept_explanation", "expected_doc_ids": ["lillog-prompt-eng-2023-03"]}
+{"id": "oos-01", "query": "What's the capital of France?", "route": "out_of_scope", "expected_doc_ids": [], "is_out_of_corpus": true}
+{"id": "oos-02", "query": "Give me a recipe for chicken biryani.", "route": "out_of_scope", "expected_doc_ids": [], "is_out_of_corpus": true}
+{"id": "oos-03", "query": "What's the weather in Mumbai today?", "route": "out_of_scope", "expected_doc_ids": [], "is_out_of_corpus": true}
+{"id": "oos-04", "query": "Who won the Premier League last season?", "route": "out_of_scope", "expected_doc_ids": [], "is_out_of_corpus": true}
+{"id": "oos-05", "query": "What's Apple's current stock price?", "route": "out_of_scope", "expected_doc_ids": [], "is_out_of_corpus": true}
+{"id": "ooc-06", "query": "Tell me about the Mamba architecture for state-space models.", "route": "concept_explanation", "expected_doc_ids": [], "is_out_of_corpus": true, "notes": "In-domain phrasing but not in the corpus — refusal expected"}
+{"id": "ooc-07", "query": "Summarise the RetNet paper from Microsoft.", "route": "paper_deep_dive", "expected_doc_ids": [], "is_out_of_corpus": true, "notes": "In-domain phrasing but not in the corpus"}
+{"id": "ooc-08", "query": "How does Reformer reduce transformer memory cost?", "route": "concept_explanation", "expected_doc_ids": [], "is_out_of_corpus": true, "notes": "In-domain phrasing but not in the corpus"}

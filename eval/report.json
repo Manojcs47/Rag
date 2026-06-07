@@ -1,0 +1,3970 @@
+{
+  "golden_set_path": "eval/golden_set.jsonl",
+  "generator_backend": "openai",
+  "judge_mode": "llm",
+  "n_questions": 48,
+  "configs": [
+    {
+      "name": "hybrid_with_filters",
+      "n_in_corpus": 40,
+      "n_out_of_corpus": 8,
+      "precision_at_5": 0.1333,
+      "recall_at_5": 0.1417,
+      "faithfulness_overall": 0.1938,
+      "refusal_correctness": 1.0,
+      "latency": {
+        "p50": 84.53,
+        "p95": 184.58,
+        "mean": 77.25,
+        "max": 192.59
+      },
+      "approx_tokens_mean": 38.2083,
+      "per_route": {
+        "concept_explanation": {
+          "n": 12.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "paper_deep_dive": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "compare_approaches": {
+          "n": 6.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "recent_developments": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "find_papers": {
+          "n": 8.0,
+          "precision_at_5": 0.6667,
+          "recall_at_5": 0.7083,
+          "faithfulness_overall": 0.9688
+        }
+      }
+    },
+    {
+      "name": "dense_only_with_filters",
+      "n_in_corpus": 40,
+      "n_out_of_corpus": 8,
+      "precision_at_5": 0.1333,
+      "recall_at_5": 0.1417,
+      "faithfulness_overall": 0.1938,
+      "refusal_correctness": 1.0,
+      "latency": {
+        "p50": 53.91,
+        "p95": 111.84,
+        "mean": 51.49,
+        "max": 185.54
+      },
+      "approx_tokens_mean": 38.2083,
+      "per_route": {
+        "concept_explanation": {
+          "n": 12.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "paper_deep_dive": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "compare_approaches": {
+          "n": 6.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "recent_developments": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "find_papers": {
+          "n": 8.0,
+          "precision_at_5": 0.6667,
+          "recall_at_5": 0.7083,
+          "faithfulness_overall": 0.9688
+        }
+      }
+    },
+    {
+      "name": "hybrid_no_filters",
+      "n_in_corpus": 40,
+      "n_out_of_corpus": 8,
+      "precision_at_5": 0.1333,
+      "recall_at_5": 0.1417,
+      "faithfulness_overall": 0.1938,
+      "refusal_correctness": 1.0,
+      "latency": {
+        "p50": 69.53,
+        "p95": 164.14,
+        "mean": 67.18,
+        "max": 193.65
+      },
+      "approx_tokens_mean": 38.2083,
+      "per_route": {
+        "concept_explanation": {
+          "n": 12.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "paper_deep_dive": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "compare_approaches": {
+          "n": 6.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "recent_developments": {
+          "n": 7.0,
+          "precision_at_5": 0.0,
+          "recall_at_5": 0.0,
+          "faithfulness_overall": 0.0
+        },
+        "find_papers": {
+          "n": 8.0,
+          "precision_at_5": 0.6667,
+          "recall_at_5": 0.7083,
+          "faithfulness_overall": 0.9688
+        }
+      }
+    }
+  ],
+  "results": [
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-01",
+      "query": "What is retrieval-augmented generation?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2005.11401"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76926124,
+      "latency_ms": 153.13,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-02",
+      "query": "How does chain-of-thought prompting work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2201.11903"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.852724,
+      "latency_ms": 118.34,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-03",
+      "query": "What is RLHF and why is it used for language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2203.02155"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6769431,
+      "latency_ms": 98.06,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-04",
+      "query": "Explain LoRA for parameter-efficient fine-tuning.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2106.09685"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77899706,
+      "latency_ms": 111.87,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-05",
+      "query": "How do autonomous LLM-powered agents work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "lillog-llm-agents-2023-06"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.81832355,
+      "latency_ms": 121.07,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-06",
+      "query": "How does the transformer architecture use attention?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762",
+        "hf-nlp-ch01"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.80821884,
+      "latency_ms": 105.8,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-07",
+      "query": "What are hallucinations in large language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-extrinsic-hallucinations-2024-07"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6275082,
+      "latency_ms": 99.39,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-08",
+      "query": "What is constitutional AI?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72093165,
+      "latency_ms": 113.31,
+      "approx_tokens": 6,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-01",
+      "query": "Tell me about the Attention Is All You Need paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5824621,
+      "latency_ms": 99.73,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-02",
+      "query": "Summarise the Llama 3 herd of models paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2407.21783"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.65189886,
+      "latency_ms": 113.94,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-03",
+      "query": "What does the GraphRAG paper propose?",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6814251,
+      "latency_ms": 86.36,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-04",
+      "query": "Describe the DeepSeek-R1 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6064923,
+      "latency_ms": 115.97,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-05",
+      "query": "Tell me about Mixtral.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7254821,
+      "latency_ms": 92.73,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-06",
+      "query": "Explain the BitNet b1.58 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [
+        "arxiv-2402.17764"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7336,
+      "latency_ms": 68.01,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "pd-07",
+      "query": "Summarise the Phi-3 technical report.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6839402,
+      "latency_ms": 188.84,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-01",
+      "query": "Compare KTO and SimPO for alignment.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7809377,
+      "latency_ms": 190.55,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-02",
+      "query": "Compare CRAG and RAFT.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6869093,
+      "latency_ms": 103.1,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-03",
+      "query": "What's the difference between CRAG and GraphRAG?",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6346646,
+      "latency_ms": 84.83,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-04",
+      "query": "Compare Llama 3 vs DeepSeek-V3.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7940017,
+      "latency_ms": 171.88,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-05",
+      "query": "Compare Chain-of-Thought and DeepSeek-R1 for reasoning.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7986394,
+      "latency_ms": 192.59,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ca-06",
+      "query": "Compare Qwen2 and Phi-3 as open-weight models.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.10671",
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76385635,
+      "latency_ms": 176.67,
+      "approx_tokens": 11,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-01",
+      "query": "Recent developments in open-weight models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437",
+        "arxiv-2407.10671",
+        "arxiv-2404.14219",
+        "arxiv-2408.00118"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79373693,
+      "latency_ms": 62.55,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-02",
+      "query": "What's new in alignment research?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.69454515,
+      "latency_ms": 71.11,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-03",
+      "query": "Recent advances in RAG.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6972599,
+      "latency_ms": 61.9,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-04",
+      "query": "Latest work on efficient inference.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79290545,
+      "latency_ms": 66.06,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-05",
+      "query": "Recent reasoning advances in LLMs.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.724208,
+      "latency_ms": 56.77,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-06",
+      "query": "What's new in evaluation benchmarks?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.04132",
+        "arxiv-2406.01574"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72744524,
+      "latency_ms": 68.67,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "rd-07",
+      "query": "Latest research on multimodal models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.05530"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77081656,
+      "latency_ms": 46.45,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-01",
+      "query": "Recommend papers on RAG.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2005.11401",
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130",
+        "hf-agents-u03",
+        "arxiv-2005.11401"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.94,
+      "approx_tokens": 170,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-02",
+      "query": "Give me a reading list on agents.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "arxiv-2405.15793",
+        "lillog-llm-agents-2023-06",
+        "hf-agents-u01"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2405.15793",
+        "hf-agents-u01",
+        "hf-agents-u02",
+        "hf-agents-u03",
+        "deepmind-alphaproof-2024-07",
+        "lillog-llm-agents-2023-06",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 3.62,
+      "approx_tokens": 224,
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-03",
+      "query": "Recommend seminal papers on alignment.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.06,
+      "approx_tokens": 90,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-04",
+      "query": "Suggest papers on efficient LLMs.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2106.09685",
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2501.12948",
+        "arxiv-2401.04088",
+        "arxiv-2401.10020",
+        "arxiv-2401.15884",
+        "arxiv-2402.01306",
+        "arxiv-2402.17764",
+        "arxiv-2403.05530"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.3,
+      "approx_tokens": 222,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-05",
+      "query": "Where do I start with reasoning in LLMs?",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.71,
+      "approx_tokens": 93,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.6667,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-06",
+      "query": "Recommend recent papers on preference optimization.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.9,
+      "approx_tokens": 120,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-07",
+      "query": "Reading list on safety and interpretability.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "openai-weak-to-strong-2023-12",
+        "lillog-adversarial-2023-10",
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "lillog-extrinsic-hallucinations-2024-07",
+        "lillog-reward-hacking-2024-11",
+        "lillog-adversarial-2023-10",
+        "openai-weak-to-strong-2023-12",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.75,
+      "approx_tokens": 154,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "fp-08",
+      "query": "Best papers on tokenization and fine-tuning.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "hf-nlp-ch03",
+        "hf-nlp-ch06"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2403.10131",
+        "hf-nlp-ch03",
+        "arxiv-2106.09685"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.71,
+      "approx_tokens": 119,
+      "precision_at_5": 0.3333,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 0.5,
+        "support": 1.0,
+        "overall": 0.75,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-09",
+      "query": "What is preference optimization?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.70545894,
+      "latency_ms": 65.83,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-10",
+      "query": "Explain Mixture of Experts in LLMs.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.67284346,
+      "latency_ms": 84.24,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-11",
+      "query": "What is reward hacking in reinforcement learning?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5954305,
+      "latency_ms": 91.28,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ce-12",
+      "query": "How does prompt engineering work for LLMs?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-prompt-eng-2023-03"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6351408,
+      "latency_ms": 91.06,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "oos-01",
+      "query": "What's the capital of France?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.01,
+      "approx_tokens": 59,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "oos-02",
+      "query": "Give me a recipe for chicken biryani.",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.24,
+      "approx_tokens": 61,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "oos-03",
+      "query": "What's the weather in Mumbai today?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.22,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "oos-04",
+      "query": "Who won the Premier League last season?",
+      "route_expected": "out_of_scope",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5647829,
+      "latency_ms": 51.65,
+      "approx_tokens": 29,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "oos-05",
+      "query": "What's Apple's current stock price?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.59,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ooc-06",
+      "query": "Tell me about the Mamba architecture for state-space models.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6331732,
+      "latency_ms": 92.82,
+      "approx_tokens": 15,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ooc-07",
+      "query": "Summarise the RetNet paper from Microsoft.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6693083,
+      "latency_ms": 73.66,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_with_filters",
+      "id": "ooc-08",
+      "query": "How does Reformer reduce transformer memory cost?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7395732,
+      "latency_ms": 88.56,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-01",
+      "query": "What is retrieval-augmented generation?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2005.11401"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76926124,
+      "latency_ms": 142.22,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-02",
+      "query": "How does chain-of-thought prompting work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2201.11903"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.852724,
+      "latency_ms": 76.76,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-03",
+      "query": "What is RLHF and why is it used for language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2203.02155"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6769431,
+      "latency_ms": 56.52,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-04",
+      "query": "Explain LoRA for parameter-efficient fine-tuning.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2106.09685"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77899706,
+      "latency_ms": 54.38,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-05",
+      "query": "How do autonomous LLM-powered agents work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "lillog-llm-agents-2023-06"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.81832355,
+      "latency_ms": 58.18,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-06",
+      "query": "How does the transformer architecture use attention?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762",
+        "hf-nlp-ch01"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.80821884,
+      "latency_ms": 69.81,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-07",
+      "query": "What are hallucinations in large language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-extrinsic-hallucinations-2024-07"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6275082,
+      "latency_ms": 56.08,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-08",
+      "query": "What is constitutional AI?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72093165,
+      "latency_ms": 85.56,
+      "approx_tokens": 6,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-01",
+      "query": "Tell me about the Attention Is All You Need paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5824621,
+      "latency_ms": 46.7,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-02",
+      "query": "Summarise the Llama 3 herd of models paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2407.21783"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.65189886,
+      "latency_ms": 61.49,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-03",
+      "query": "What does the GraphRAG paper propose?",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6814251,
+      "latency_ms": 64.26,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-04",
+      "query": "Describe the DeepSeek-R1 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6064923,
+      "latency_ms": 65.23,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-05",
+      "query": "Tell me about Mixtral.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7254821,
+      "latency_ms": 57.78,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-06",
+      "query": "Explain the BitNet b1.58 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [
+        "arxiv-2402.17764"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7336,
+      "latency_ms": 44.18,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "pd-07",
+      "query": "Summarise the Phi-3 technical report.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6839402,
+      "latency_ms": 59.46,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-01",
+      "query": "Compare KTO and SimPO for alignment.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7809377,
+      "latency_ms": 105.49,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-02",
+      "query": "Compare CRAG and RAFT.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6869093,
+      "latency_ms": 51.18,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-03",
+      "query": "What's the difference between CRAG and GraphRAG?",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6346646,
+      "latency_ms": 52.41,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-04",
+      "query": "Compare Llama 3 vs DeepSeek-V3.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7940017,
+      "latency_ms": 108.68,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-05",
+      "query": "Compare Chain-of-Thought and DeepSeek-R1 for reasoning.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7986394,
+      "latency_ms": 113.54,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ca-06",
+      "query": "Compare Qwen2 and Phi-3 as open-weight models.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.10671",
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76385635,
+      "latency_ms": 103.24,
+      "approx_tokens": 11,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-01",
+      "query": "Recent developments in open-weight models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437",
+        "arxiv-2407.10671",
+        "arxiv-2404.14219",
+        "arxiv-2408.00118"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79373693,
+      "latency_ms": 53.44,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-02",
+      "query": "What's new in alignment research?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.69454515,
+      "latency_ms": 49.25,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-03",
+      "query": "Recent advances in RAG.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6972599,
+      "latency_ms": 39.43,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-04",
+      "query": "Latest work on efficient inference.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79290545,
+      "latency_ms": 47.87,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-05",
+      "query": "Recent reasoning advances in LLMs.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.724208,
+      "latency_ms": 46.13,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-06",
+      "query": "What's new in evaluation benchmarks?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.04132",
+        "arxiv-2406.01574"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72744524,
+      "latency_ms": 54.59,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "rd-07",
+      "query": "Latest research on multimodal models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.05530"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77081656,
+      "latency_ms": 48.51,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-01",
+      "query": "Recommend papers on RAG.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2005.11401",
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130",
+        "hf-agents-u03",
+        "arxiv-2005.11401"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.21,
+      "approx_tokens": 170,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-02",
+      "query": "Give me a reading list on agents.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "arxiv-2405.15793",
+        "lillog-llm-agents-2023-06",
+        "hf-agents-u01"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2405.15793",
+        "hf-agents-u01",
+        "hf-agents-u02",
+        "hf-agents-u03",
+        "deepmind-alphaproof-2024-07",
+        "lillog-llm-agents-2023-06",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.01,
+      "approx_tokens": 224,
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-03",
+      "query": "Recommend seminal papers on alignment.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.67,
+      "approx_tokens": 90,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-04",
+      "query": "Suggest papers on efficient LLMs.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2106.09685",
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2501.12948",
+        "arxiv-2401.04088",
+        "arxiv-2401.10020",
+        "arxiv-2401.15884",
+        "arxiv-2402.01306",
+        "arxiv-2402.17764",
+        "arxiv-2403.05530"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.78,
+      "approx_tokens": 222,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-05",
+      "query": "Where do I start with reasoning in LLMs?",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.32,
+      "approx_tokens": 93,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.6667,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-06",
+      "query": "Recommend recent papers on preference optimization.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.57,
+      "approx_tokens": 120,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-07",
+      "query": "Reading list on safety and interpretability.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "openai-weak-to-strong-2023-12",
+        "lillog-adversarial-2023-10",
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "lillog-extrinsic-hallucinations-2024-07",
+        "lillog-reward-hacking-2024-11",
+        "lillog-adversarial-2023-10",
+        "openai-weak-to-strong-2023-12",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.12,
+      "approx_tokens": 154,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "fp-08",
+      "query": "Best papers on tokenization and fine-tuning.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "hf-nlp-ch03",
+        "hf-nlp-ch06"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2403.10131",
+        "hf-nlp-ch03",
+        "arxiv-2106.09685"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.77,
+      "approx_tokens": 119,
+      "precision_at_5": 0.3333,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 0.5,
+        "support": 1.0,
+        "overall": 0.75,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-09",
+      "query": "What is preference optimization?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.70545894,
+      "latency_ms": 56.41,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-10",
+      "query": "Explain Mixture of Experts in LLMs.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.67284346,
+      "latency_ms": 71.55,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-11",
+      "query": "What is reward hacking in reinforcement learning?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5954305,
+      "latency_ms": 53.44,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ce-12",
+      "query": "How does prompt engineering work for LLMs?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-prompt-eng-2023-03"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6351408,
+      "latency_ms": 55.99,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "oos-01",
+      "query": "What's the capital of France?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.22,
+      "approx_tokens": 59,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "oos-02",
+      "query": "Give me a recipe for chicken biryani.",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 1.21,
+      "approx_tokens": 61,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "oos-03",
+      "query": "What's the weather in Mumbai today?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 1.28,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "oos-04",
+      "query": "Who won the Premier League last season?",
+      "route_expected": "out_of_scope",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5647829,
+      "latency_ms": 35.85,
+      "approx_tokens": 29,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "oos-05",
+      "query": "What's Apple's current stock price?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.56,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ooc-06",
+      "query": "Tell me about the Mamba architecture for state-space models.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6331732,
+      "latency_ms": 60.79,
+      "approx_tokens": 15,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ooc-07",
+      "query": "Summarise the RetNet paper from Microsoft.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6693083,
+      "latency_ms": 55.79,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "dense_only_with_filters",
+      "id": "ooc-08",
+      "query": "How does Reformer reduce transformer memory cost?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7395732,
+      "latency_ms": 185.54,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-01",
+      "query": "What is retrieval-augmented generation?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2005.11401"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76926124,
+      "latency_ms": 137.73,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-02",
+      "query": "How does chain-of-thought prompting work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2201.11903"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.852724,
+      "latency_ms": 74.18,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-03",
+      "query": "What is RLHF and why is it used for language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2203.02155"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6769431,
+      "latency_ms": 96.98,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-04",
+      "query": "Explain LoRA for parameter-efficient fine-tuning.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2106.09685"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77899706,
+      "latency_ms": 65.8,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-05",
+      "query": "How do autonomous LLM-powered agents work?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "lillog-llm-agents-2023-06"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.81832355,
+      "latency_ms": 82.23,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-06",
+      "query": "How does the transformer architecture use attention?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762",
+        "hf-nlp-ch01"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.80821884,
+      "latency_ms": 96.36,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-07",
+      "query": "What are hallucinations in large language models?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-extrinsic-hallucinations-2024-07"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6275082,
+      "latency_ms": 114.63,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-08",
+      "query": "What is constitutional AI?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72093165,
+      "latency_ms": 86.51,
+      "approx_tokens": 6,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-01",
+      "query": "Tell me about the Attention Is All You Need paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-1706.03762"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5824621,
+      "latency_ms": 84.36,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-02",
+      "query": "Summarise the Llama 3 herd of models paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2407.21783"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.65189886,
+      "latency_ms": 97.52,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-03",
+      "query": "What does the GraphRAG paper propose?",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6814251,
+      "latency_ms": 75.76,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-04",
+      "query": "Describe the DeepSeek-R1 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6064923,
+      "latency_ms": 95.17,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-05",
+      "query": "Tell me about Mixtral.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7254821,
+      "latency_ms": 70.18,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-06",
+      "query": "Explain the BitNet b1.58 paper.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [
+        "arxiv-2402.17764"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7336,
+      "latency_ms": 50.59,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "pd-07",
+      "query": "Summarise the Phi-3 technical report.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6839402,
+      "latency_ms": 104.39,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-01",
+      "query": "Compare KTO and SimPO for alignment.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7809377,
+      "latency_ms": 193.65,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-02",
+      "query": "Compare CRAG and RAFT.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6869093,
+      "latency_ms": 66.23,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-03",
+      "query": "What's the difference between CRAG and GraphRAG?",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6346646,
+      "latency_ms": 47.46,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-04",
+      "query": "Compare Llama 3 vs DeepSeek-V3.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7940017,
+      "latency_ms": 167.66,
+      "approx_tokens": 7,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-05",
+      "query": "Compare Chain-of-Thought and DeepSeek-R1 for reasoning.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7986394,
+      "latency_ms": 157.61,
+      "approx_tokens": 13,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ca-06",
+      "query": "Compare Qwen2 and Phi-3 as open-weight models.",
+      "route_expected": "compare_approaches",
+      "route_actual": "compare_approaches",
+      "expected_doc_ids": [
+        "arxiv-2407.10671",
+        "arxiv-2404.14219"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.76385635,
+      "latency_ms": 171.95,
+      "approx_tokens": 11,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-01",
+      "query": "Recent developments in open-weight models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2407.21783",
+        "arxiv-2412.19437",
+        "arxiv-2407.10671",
+        "arxiv-2404.14219",
+        "arxiv-2408.00118"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79373693,
+      "latency_ms": 83.09,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-02",
+      "query": "What's new in alignment research?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.69454515,
+      "latency_ms": 63.43,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-03",
+      "query": "Recent advances in RAG.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6972599,
+      "latency_ms": 62.35,
+      "approx_tokens": 5,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-04",
+      "query": "Latest work on efficient inference.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.79290545,
+      "latency_ms": 48.9,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-05",
+      "query": "Recent reasoning advances in LLMs.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.724208,
+      "latency_ms": 71.08,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-06",
+      "query": "What's new in evaluation benchmarks?",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.04132",
+        "arxiv-2406.01574"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.72744524,
+      "latency_ms": 55.62,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "rd-07",
+      "query": "Latest research on multimodal models.",
+      "route_expected": "recent_developments",
+      "route_actual": "recent_developments",
+      "expected_doc_ids": [
+        "arxiv-2403.05530"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.77081656,
+      "latency_ms": 56.77,
+      "approx_tokens": 9,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-01",
+      "query": "Recommend papers on RAG.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2005.11401",
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.15884",
+        "arxiv-2403.10131",
+        "arxiv-2404.16130",
+        "hf-agents-u03",
+        "arxiv-2005.11401"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.07,
+      "approx_tokens": 170,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-02",
+      "query": "Give me a reading list on agents.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2210.03629",
+        "arxiv-2405.15793",
+        "lillog-llm-agents-2023-06",
+        "hf-agents-u01"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2405.15793",
+        "hf-agents-u01",
+        "hf-agents-u02",
+        "hf-agents-u03",
+        "deepmind-alphaproof-2024-07",
+        "lillog-llm-agents-2023-06",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.53,
+      "approx_tokens": 224,
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-03",
+      "query": "Recommend seminal papers on alignment.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2203.02155",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.47,
+      "approx_tokens": 90,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-04",
+      "query": "Suggest papers on efficient LLMs.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2106.09685",
+        "arxiv-2402.17764",
+        "arxiv-2407.08608"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2501.12948",
+        "arxiv-2401.04088",
+        "arxiv-2401.10020",
+        "arxiv-2401.15884",
+        "arxiv-2402.01306",
+        "arxiv-2402.17764",
+        "arxiv-2403.05530"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.43,
+      "approx_tokens": 222,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-05",
+      "query": "Where do I start with reasoning in LLMs?",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629",
+        "arxiv-2501.12948"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2201.11903",
+        "arxiv-2210.03629"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.06,
+      "approx_tokens": 93,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.6667,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-06",
+      "query": "Recommend recent papers on preference optimization.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2401.10020",
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.63,
+      "approx_tokens": 120,
+      "precision_at_5": 1.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-07",
+      "query": "Reading list on safety and interpretability.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "openai-weak-to-strong-2023-12",
+        "lillog-adversarial-2023-10",
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [
+        "anthropic-mapping-mind-2024-05",
+        "lillog-extrinsic-hallucinations-2024-07",
+        "lillog-reward-hacking-2024-11",
+        "lillog-adversarial-2023-10",
+        "openai-weak-to-strong-2023-12",
+        "arxiv-2212.08073"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 2.8,
+      "approx_tokens": 154,
+      "precision_at_5": 0.8,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 1.0,
+        "support": 1.0,
+        "overall": 1.0,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "fp-08",
+      "query": "Best papers on tokenization and fine-tuning.",
+      "route_expected": "find_papers",
+      "route_actual": "find_papers",
+      "expected_doc_ids": [
+        "hf-nlp-ch03",
+        "hf-nlp-ch06"
+      ],
+      "retrieved_doc_ids": [
+        "arxiv-2403.10131",
+        "hf-nlp-ch03",
+        "arxiv-2106.09685"
+      ],
+      "answer_status": "answered",
+      "confidence": 1.0,
+      "latency_ms": 1.9,
+      "approx_tokens": 119,
+      "precision_at_5": 0.3333,
+      "recall_at_5": 0.5,
+      "faithfulness": {
+        "coverage": 0.5,
+        "support": 1.0,
+        "overall": 0.75,
+        "judge": "heuristic",
+        "reason": "llm_failed: [Errno 111] Connection refused"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-09",
+      "query": "What is preference optimization?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2402.01306",
+        "arxiv-2405.14734"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.70545894,
+      "latency_ms": 70.58,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-10",
+      "query": "Explain Mixture of Experts in LLMs.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "arxiv-2401.04088",
+        "arxiv-2412.19437"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.67284346,
+      "latency_ms": 86.9,
+      "approx_tokens": 8,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-11",
+      "query": "What is reward hacking in reinforcement learning?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-reward-hacking-2024-11"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5954305,
+      "latency_ms": 55.69,
+      "approx_tokens": 32,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ce-12",
+      "query": "How does prompt engineering work for LLMs?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [
+        "lillog-prompt-eng-2023-03"
+      ],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6351408,
+      "latency_ms": 96.89,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": false,
+      "refusal_correct": null
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "oos-01",
+      "query": "What's the capital of France?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 1.56,
+      "approx_tokens": 59,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "oos-02",
+      "query": "Give me a recipe for chicken biryani.",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 1.23,
+      "approx_tokens": 61,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "oos-03",
+      "query": "What's the weather in Mumbai today?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 1.22,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "oos-04",
+      "query": "Who won the Premier League last season?",
+      "route_expected": "out_of_scope",
+      "route_actual": "concept_explanation",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.5647829,
+      "latency_ms": 46.24,
+      "approx_tokens": 29,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "oos-05",
+      "query": "What's Apple's current stock price?",
+      "route_expected": "out_of_scope",
+      "route_actual": "out_of_scope",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "refused",
+      "confidence": 0.0,
+      "latency_ms": 2.11,
+      "approx_tokens": 60,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ooc-06",
+      "query": "Tell me about the Mamba architecture for state-space models.",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6331732,
+      "latency_ms": 68.89,
+      "approx_tokens": 15,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ooc-07",
+      "query": "Summarise the RetNet paper from Microsoft.",
+      "route_expected": "paper_deep_dive",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.6693083,
+      "latency_ms": 97.52,
+      "approx_tokens": 10,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    },
+    {
+      "config": "hybrid_no_filters",
+      "id": "ooc-08",
+      "query": "How does Reformer reduce transformer memory cost?",
+      "route_expected": "concept_explanation",
+      "route_actual": "paper_deep_dive",
+      "expected_doc_ids": [],
+      "retrieved_doc_ids": [],
+      "answer_status": "error",
+      "confidence": 0.7395732,
+      "latency_ms": 99.91,
+      "approx_tokens": 12,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "faithfulness": {
+        "coverage": 0.0,
+        "support": 0.0,
+        "overall": 0.0,
+        "judge": "n/a"
+      },
+      "is_out_of_corpus": true,
+      "refusal_correct": true
+    }
+  ]
+}

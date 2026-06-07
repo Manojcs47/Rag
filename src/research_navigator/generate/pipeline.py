@@ -42,7 +42,7 @@ from research_navigator.ingest.manifest import load_manifest
 from research_navigator.ingest.qdrant_store import QdrantStore
 from research_navigator.logging import get_logger
 from research_navigator.retrieve.filters import build_filter
-from research_navigator.retrieve.hybrid import HybridRetriever, RetrievedChunk
+from research_navigator.retrieve.hybrid import HybridRetriever, RetrievedChunk, Retriever
 from research_navigator.retrieve.query import QueryAnalysis, analyze_query
 
 log = get_logger(__name__)
@@ -94,14 +94,19 @@ class QueryEngine:
         sparse: SparseEmbedder | None = None,
         generator: Generator | None = None,
         known_tags: frozenset[str] | None = None,
+        retriever: Retriever | None = None,
     ) -> None:
         self._s = settings
         self._store = store or QdrantStore(settings)
-        if dense is None or sparse is None:
-            built_dense, built_sparse = build_embedders(settings)
-            dense = dense or built_dense
-            sparse = sparse or built_sparse
-        self._retriever = HybridRetriever(settings, self._store, dense, sparse)
+        if retriever is not None:
+            # Eval / ablation path: caller-supplied retriever (e.g. dense-only).
+            self._retriever: Retriever = retriever
+        else:
+            if dense is None or sparse is None:
+                built_dense, built_sparse = build_embedders(settings)
+                dense = dense or built_dense
+                sparse = sparse or built_sparse
+            self._retriever = HybridRetriever(settings, self._store, dense, sparse)
         self._generator = generator or build_generator(settings)
         self._known_tags = known_tags if known_tags is not None else self._load_tags()
 
@@ -112,7 +117,7 @@ class QueryEngine:
         return self._s
 
     @property
-    def retriever(self) -> HybridRetriever:
+    def retriever(self) -> Retriever:
         return self._retriever
 
     @property
